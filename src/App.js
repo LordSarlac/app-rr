@@ -17,7 +17,7 @@ const ErrorPage = () => <h1>Strona nie istnieje</h1>
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div>
           <header>
             <nav>
@@ -37,9 +37,9 @@ class App extends Component {
           </header>
           <section>
             <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/news" component={News} />
-              <Route path="/contact" component={Contact} />
+              <Route path="#/" exact component={Home} />
+              <Route path="#/news" component={News} />
+              <Route path="#/contact" component={Contact} />
               <Route component={ErrorPage} />
             </Switch>
           </section>
